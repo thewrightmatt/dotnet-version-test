@@ -1,0 +1,22 @@
+name: Choose .net version
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+    inputs:
+      dotnet-version:
+        description: 'Select .Net version'
+        required: false
+        default: '8.0.x'
+        type: choice
+        options:
+          - '6.0.100'
+          - '8.0.x'
+
+jobs:
+  choose-version:
+    uses: thewrightmatt/reusable-workflow/blob/main/.github/workflows/dotnet.yml@main
+    with:
+      dotnet_version: "${{ inputs.dotnet-version }}"
