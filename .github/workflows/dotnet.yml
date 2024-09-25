@@ -17,6 +17,6 @@ on:
 
 jobs:
   choose-version:
-    uses: thewrightmatt/reusable-workflow/blob/main/.github/workflows/dotnet.yml@main
+    uses: thewrightmatt/reusable-workflow/.github/workflows/dotnet.yml@main
     with:
       dotnet_version: "${{ inputs.dotnet-version }}"
